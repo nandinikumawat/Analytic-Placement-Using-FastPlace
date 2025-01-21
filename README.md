@@ -82,8 +82,10 @@ python3 plot_placement.py <input_file> <output_image>
 - Each iteration of the conjugate gradient method evaluates the residual error and adjusts the cell placements to reduce the quadratic cost, ensuring both accuracy and computational efficiency.
 - **Hybrid Net Model:** This project uses a mixed approach by combining the clique and star net models. For smaller nets (2-3 pins), the clique model is used to minimize complexity, while the star model is employed for larger nets (4+ pins) to reduce non-zero entries in the connectivity matrix. This hybrid approach ensures a balance between accuracy and computational efficiency, as described in the FastPlace methodology.
 
+<center>
 ![image](https://github.com/user-attachments/assets/2cdd32db-837a-4cfc-8540-c1961fad9c7a)
-
+</center>
+   
 - The connectivity matrix (`matQ`) is constructed using the clique and star hybrid model.
 - A conjugate gradient solver minimizes the quadratic objective, producing initial cell placements.
 - The quadratic objective function represents the total wirelength as a sum of weighted distances between connected cells. Minimizing this function involves solving a linear system of equations derived from the connectivity matrix (`matQ`).
