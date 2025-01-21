@@ -82,10 +82,10 @@ python3 plot_placement.py <input_file> <output_image>
 - Each iteration of the conjugate gradient method evaluates the residual error and adjusts the cell placements to reduce the quadratic cost, ensuring both accuracy and computational efficiency.
 - **Hybrid Net Model:** This project uses a mixed approach by combining the clique and star net models. For smaller nets (2-3 pins), the clique model is used to minimize complexity, while the star model is employed for larger nets (4+ pins) to reduce non-zero entries in the connectivity matrix. This hybrid approach ensures a balance between accuracy and computational efficiency, as described in the FastPlace methodology.
 
-<center>
-![image](https://github.com/user-attachments/assets/2cdd32db-837a-4cfc-8540-c1961fad9c7a)
-</center>
-   
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2cdd32db-837a-4cfc-8540-c1961fad9c7a" alt="Image Description" width="500">
+</p>
+
 - The connectivity matrix (`matQ`) is constructed using the clique and star hybrid model.
 - A conjugate gradient solver minimizes the quadratic objective, producing initial cell placements.
 - The quadratic objective function represents the total wirelength as a sum of weighted distances between connected cells. Minimizing this function involves solving a linear system of equations derived from the connectivity matrix (`matQ`).
@@ -99,7 +99,10 @@ python3 plot_placement.py <input_file> <output_image>
 - The `cellSpreading` function translates the concept of bin utilization as described in the FastPlace paper. Initially, the chip area is divided into uniform bins, each representing a portion of the placement region. The function calculates the utilization of each bin based on the number of cells within it. Cells are shifted from over-utilized bins to neighboring less-utilized bins while maintaining relative ordering.
 - To prevent cells from reverting to their previous positions during subsequent iterations, spreading forces are calculated and applied. These forces are modeled as pseudo-nets connecting cells to virtual pins along the chip boundary, as described in the FastPlace methodology.
 
-  ![image](https://github.com/user-attachments/assets/e4fac33b-3ceb-47ab-bf1c-6cd84c10cc4c)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e4fac33b-3ceb-47ab-bf1c-6cd84c10cc4c" alt="Image Description" width="500">
+</p>
+
 
 - The function also accounts for movement control parameters, ensuring that cells do not move excessively between iterations, thereby stabilizing the placement process.
 - Cells are redistributed based on bin utilization, ensuring an even distribution.
