@@ -100,14 +100,17 @@ python3 plot_placement.py <input_file> <output_image>
 - To prevent cells from reverting to their previous positions during subsequent iterations, spreading forces are calculated and applied. These forces are modeled as pseudo-nets connecting cells to virtual pins along the chip boundary, as described in the FastPlace methodology.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e4fac33b-3ceb-47ab-bf1c-6cd84c10cc4c" alt="Image Description" width="500">
+  <img src="https://github.com/user-attachments/assets/e4fac33b-3ceb-47ab-bf1c-6cd84c10cc4c" alt="Image Description" width="200">
 </p>
 
 
 - The function also accounts for movement control parameters, ensuring that cells do not move excessively between iterations, thereby stabilizing the placement process.
 - Cells are redistributed based on bin utilization, ensuring an even distribution.
 
-  ![image](https://github.com/user-attachments/assets/fb99ef33-6f42-4d84-8516-1f09f552cb65)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fb99ef33-6f42-4d84-8516-1f09f552cb65" alt="Image Description" width="300">
+</p>
+
 
 ### Wirelength Optimization
 - The wirelength is computed using:
